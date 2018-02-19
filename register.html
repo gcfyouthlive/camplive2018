@@ -55,7 +55,7 @@
 			 			<img src="img/icon-2.svg" width="50%">
 			 			<div class="media-body">
             <h4>2.</h4>              
-			 				<p>check email for waiver & OR code</p>
+			 				<p>check email for waiver & QR code</p>
 			 			</div>
 		 			</div>
 		 			<div class="col-12 col-sm-6 col-md-3 col-lg-3">
@@ -90,9 +90,6 @@
     				<div class="col-sm pb-2">
       					<input required type="text" class="form-control" id="inputLastname" name="last_name"  placeholder="Last name">
     				</div>
-    				<div class="col-sm pb-2">
-    					<input  required type="text" class="form-control" placeholder="Middle initial">
-    				</div>
   				</div>
   				<div class="row">
   					<div class="col-sm pb-2">
@@ -119,10 +116,6 @@
   					<div class="col-sm pb-2">
   						<label class="form-check-label" for="inputYear">Year</label>
   						<input required type="text" class="form-control" id="inputYear" name="year" placeholder="Year">
-  					</div>
-  					<div class="col-sm pb-2">
-  						<label class="form-check-label" for="inputCourse">Course/Strand</label>
-  						<input required type="text" class="form-control" id="inputCourse" name="course" placeholder="Course/Strand">
   					</div>
   				</div>
   				<div class="row">
@@ -167,7 +160,6 @@
       					<label for="inputGcfservice">Which Service do you attend?</label>
     					<select class="form-control" id="inputGcfservice" name="gcf_service">
       						<option disabled>Saturday Services</option>
-      						<option>5:00 Youth Service</option>
       						<option>6:00 Traditional Service</option>
       						<option disabled>Sunday Services</option>
       						<option>8:00 Worship Service</option>
@@ -197,6 +189,10 @@
       						<option>No</option>
       					</select>
       				</div>
+              <div class="col-sm pb-2">
+                <label for="inputFirsttimeHear">Where did you hear about camp? (If first time)</label>
+                <input type="text" class="form-control" id="inputFirsttimeHear" name="firt_time_hear">
+              </div>
       			</div>
       			<br>
       			<h4>Emergency Details</h4>
@@ -216,6 +212,7 @@
     					<textarea class="form-control" id="inputNotes" name="notes" rows="3"></textarea>
       				</div>
       			</div>
+            <!-- 
       			<h4>Parent's Details</h4>
       			<div class="row">
       				<div class="col-6">
@@ -241,6 +238,7 @@
       					</div>
       				</div>
       			</div>
+            -->
       			<br>
       			<button id="form-sub" type="submit" class="form-sub btn btn-primary">Submit</button>
       			<br>
