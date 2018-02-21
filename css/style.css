@@ -67,21 +67,22 @@ section {
 	margin-left: -15px;
 }
 
-.question {
-	margin: 0.3rem 0;
-	display: flex;
-}
-
 .question a {
 	font-weight: 700;
 }
 
 .question a:hover {
-	text-decoration: underline !important;
+	color: #F06B4B !important;
 }
 
 .question p {
 	margin-bottom: 0;
+}
+
+.question a > .rotate {
+	-moz-transition: transform 0.3s ease;
+  -webkit-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 #faqs .answer {
@@ -127,72 +128,3 @@ section#youthlive {
 	padding-top: 0;
 	padding-bottom: 0;
 }
-
-/* CSS Rotate*/
-
-.rotate {
--webkit-animation: spin1 0.3s  forwards;
--moz-animation: spin1 0.3s  forwards;
--o-animation: spin1 0.3s  forwards;
--ms-animation: spin1 0.3s  forwards;
-animation: spin1 0.3s  ease forwards;
-
--webkit-transform-origin: 50% 50%;
--moz-transform-origin: 50% 50%;
--o-transform-origin: 50% 50%;
-transform-origin: 50% 50%;
-}
-.rotate-back {
--webkit-animation: spin2 0.3s  forwards;
--moz-animation: spin2 0.3s  forwards;
--o-animation: spin2 0.3s  forwards;
--ms-animation: spin2 0.3s  forwards;
-animation: spin2 0.3s  ease forwards;
-
--webkit-transform-origin: 50% 50%;
--moz-transform-origin: 50% 50%;
--o-transform-origin: 50% 50%;
-transform-origin: 50% 50%;
-}
-
-@-webkit-keyframes spin1 {
-0% { -webkit-transform: rotate(0deg);}
-100% { -webkit-transform: rotate(90deg);}
-}
-@-moz-keyframes spin1 {
-0% { -moz-transform: rotate(0deg); }
-100% { -moz-transform: rotate(90deg);}
-}
-@-o-keyframes spin1 {
-0% { -o-transform: rotate(0deg);}
-100% { -o-transform: rotate(90deg);}
-}
-@-ms-keyframes spin1 {
-0% { -ms-transform: rotate(0deg);}
-100% { -ms-transform: rotate(90deg);}
-}
-@-keyframes spin1 {
-0% { transform: rotate(0deg); }
-100% { transform: rotate(90deg);}
-} 
-
-@-webkit-keyframes spin2 {
-0% { -webkit-transform: rotate(90deg);}
-100% { -webkit-transform: rotate(0deg);}
-}
-@-moz-keyframes spin2 {
-0% { -moz-transform: rotate(90deg); }
-100% { -moz-transform: rotate(0deg);}
-}
-@-o-keyframes spin2 {
-0% { -o-transform: rotate(90deg);}
-100% { -o-transform: rotate(0deg);}
-}
-@-ms-keyframes spin2 {
-0% { -ms-transform: rotate(90deg);}
-100% { -ms-transform: rotate(0deg);}
-}
-@-keyframes spin2 {
-0% { transform: rotate(90deg); }
-100% { transform: rotate(0deg);}
-} 
