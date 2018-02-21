@@ -195,13 +195,19 @@
       return false;
     });
   });
-
+// 
 document.addEventListener('DOMContentLoaded', function () {
+    var count = 0;
     $(".caret-click").on('click', function () {
+      
+      count++;
+      if (count === 2) {
+        count = 0;
+      }
       $(this)
         .find('[data-fa-i2svg]')
-        .toggleClass('fa-caret-down')
-        .toggleClass('fa-caret-right');
+        .toggleClass('rotate',)
+        .toggleClass('rotate-back', count === 0)
     });
   });
   </script>
