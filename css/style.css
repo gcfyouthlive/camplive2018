@@ -72,6 +72,10 @@ section {
 	display: flex;
 }
 
+.question a {
+	font-weight: 700
+}
+
 .question p {
 	margin-bottom: 0;
 }
