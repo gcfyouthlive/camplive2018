@@ -79,10 +79,6 @@ section {
 	font-weight: 700;
 }
 
-.question a:hover {
-	text-decoration: underline !important;
-}
-
 .question p {
 	margin-bottom: 0;
 }
