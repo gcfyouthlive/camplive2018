@@ -71,19 +71,11 @@ section {
 	font-weight: 700;
 }
 
-.question a:hover {
-	color: #F06B4B !important;
-}
-
-.question a {
-	font-weight: 700;
-}
-
 .question p {
 	margin-bottom: 0;
 }
 
-.question a > .rotate {
+.rotate {
 	-moz-transition: transform 0.3s ease;
   -webkit-transition: transform 0.3s ease;
   transition: transform 0.3s ease;
@@ -103,7 +95,7 @@ input.form-control:disabled {
 	background-color: #ffffff;
 }
 
-a:hover {
+a {
 	cursor: pointer;
 }
 
