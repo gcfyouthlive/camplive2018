@@ -75,7 +75,7 @@ section {
 	margin-bottom: 0;
 }
 
-.question a > .rotate {
+.rotate {
 	-moz-transition: transform 0.3s ease;
   -webkit-transition: transform 0.3s ease;
   transition: transform 0.3s ease;
