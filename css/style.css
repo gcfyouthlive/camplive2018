@@ -71,21 +71,6 @@ section {
 	font-weight: 700;
 }
 
-<<<<<<< HEAD
-=======
-.question a:hover {
-	color: #F06B4B !important;
-}
-
-.question a {
-	font-weight: 700;
-}
-
-.question a:hover {
-	text-decoration: underline !important;
-}
-
->>>>>>> 34163cea640d4f491f45243609bbe0e4dc60989f
 .question p {
 	margin-bottom: 0;
 }
