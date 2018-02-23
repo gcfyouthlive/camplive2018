@@ -9,6 +9,7 @@
 	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 	<!-- Bootstrap Datepicker plugin -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+  <link rel="stylesheet" href="css/camp-form.css">
 </head>
 <body>
   <!-- Navbar  -->
@@ -18,285 +19,209 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarCollapsible">
-    <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="/">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" href="/register.html">Register</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">(Placeholder)</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#">(Placeholder 2)</a>
-    </li>
-    </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/register.html">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">(Placeholder)</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">(Placeholder 2)</a>
+        </li>   
+      </ul>
     </div>    
   </nav>
   <!-- Banner -->
-	<div class="justify-content-center mb-3">
-		<img src="img/banner-web-form.png" width="100%">
-	</div>
+  <div class="justify-content-center mb-3">
+    <img src="img/banner-web-form.png" width="100%">
+  </div>
   <!-- Form Header and Instructions -->
-	<div class="container mt-3">
- 		<div id="form-header" class="text-center">
- 			<h2 class="text-lowercase">high school camp sign-up form</h2>
- 			<div class="media mx-auto">
-	 			<div class="row">
-	 				<div class="col-12 col-sm-6 col-md-3 col-lg-3">
-						<img src="img/icon-1.svg" width="50%">
-			 			<div class="media-body">
-              <h4>1.</h4>
-			 				<p>fill out the online form below</p>
-			 			</div>
-		 			</div>
-		 			<div class="col-12 col-sm-6 col-md-3 col-lg-3">
-			 			<img src="img/icon-2.svg" width="50%">
-			 			<div class="media-body">
-            <h4>2.</h4>              
-			 				<p>check email for waiver & QR code</p>
-			 			</div>
-		 			</div>
-		 			<div class="col-12 col-sm-6 col-md-3 col-lg-3">
-			 			<img src="img/icon-3.svg" width="50%">
-			 			<div class="media-body">
-              <h4>3.</h4>
-			 				<p>print and sign waiver</p>
-			 			</div>
-			 		</div>
-			 		<div class="col-12 col-sm-6 col-md-3 col-lg-3">
-			 			<img src="img/icon-4.svg" width="50%">
-			 			<div class="media-body">
-              <h4 class="align-self-start">4.</h4>
-			 				<p>present QR code, signed waiver, and pay camp fee</p>
-			 			</div>
-			 		</div>
-	 			</div>
-	 		</div>
- 		</div>
- 		<div id="form-body" class="col-12 carousel-slide" data-ride="carousel">
-    <!-- Form body -->
- 			<form id="camp-form">
-        <!-- General Details-->
- 				<h4>General Details</h4>
- 				<label class="control-label">Name</label>
-				<div class="row">
-    				<div class="col-sm pb-2">
-      					<input required type="text" class="form-control" id="inputFirstname" name="first_name" placeholder="First name">
-    				</div>
-    				<div class="col-sm pb-2">
-    					<input required type="text" class="form-control" id="inputNickname" name="nickname"  placeholder="Nickname">
-    				</div>
-    				<div class="col-sm pb-2">
-      					<input required type="text" class="form-control" id="inputLastname" name="last_name"  placeholder="Last name">
-    				</div>
-  				</div>
-  				<div class="row">
-  					<div class="col-sm pb-2">
-        					<label class="control-label col-form-label" for="birthdate">Birthday</label>
-        					<input required class="form-control" id="inputBirthdate" name="birthday" placeholder="MM/DD/YYY" type="text"/>
-  					</div>
-  					<div class="col-sm pb-2">
-  						<label class="control-label col-form-label">Gender</label>
-  						<div class="form-check">
-  							<input class="form-check-input" type="radio" name="inputGender" id="inputGender" value="male" checked>
-  							<label class="form-check-label" for="inputGender1">Male</label>
-  						</div>
-  						<div class="form-check">
-  							<input class="form-check-input" type="radio" name="inputGender" id="inputGender2" value="female">
-  							<label class="form-check-label" for="inputGender2">Female</label>
-						</div>
-  					</div>
-  				</div>
-  				<div class="row">
-  					<div class="col-sm pb-2">
-  						<label class="form-check-label" for="inputSchool">School</label>
-  						<input required type="text" class="form-control" id="inputSchool" name="school" placeholder="School">
-  					</div>
-  					<div class="col-sm pb-2">
-  						<label class="form-check-label" for="inputYear">Year</label>
-  						<input required type="text" class="form-control" id="inputYear" name="year" placeholder="Year">
-  					</div>
-  				</div>
-  				<div class="row">
-  					<div class="col-sm pb-2">
-  						<label for="inputEmail">Email address</label>
-    					<input required type="email" class="form-control" id="inputEmail" name="email" placeholder="mail@example.com">
-  					</div>
-  					<div class="col-sm pb-2">
-  						<label for="inputMobileno">Mobile Number</label>
-    					<input required type="text" class="form-control" id="inputMobileno" name="mobileno" placeholder="ex. 09xxxxxxxxx">
-  					</div>
-   					<div class="col-sm pb-2">
-  						<label for="inputFacebookid">Facebook ID</label>
-    					<input required type="text" class="form-control" id="inputFacebookid" name="facebook_id" placeholder="ex. gcfyouthlive">
-  					</div>
-  				</div>
-  				<div class="row">
-  					<div class="col-4 pb-2">
-  							<label class="control-label col-form-label">Shirt Size</label>
-  							<select required class="form-control" id="inputShirtsize" name="shirt_size">
-      							<option>Extra Small</option>
-      							<option>Small</option>
-      							<option>Medium</option>
-      							<option>Large</option>
-      							<option>Extra Large</option>
-      						</select>
-  					</div>
-  					<div class="col-8 pb-2">
-  						<label for="inputChurch">Church</label>
-    					<input required type="text" class="form-control" id="inputChurch" name="church" placeholder="Church">
-  					</div>
-  				</div>
-  				<div class="row">
-  					<div class="col-sm pb-2">
-  						<label for="inputGcfmember">Are you a member of GCF?</label>
-    					<select class="form-control" id="inputGcfmember" name="gcf_member">
-      						<option>Yes</option>
-      						<option>No</option>
-      					</select>
-      				</div>
-      				<div class="col-sm pb-2">
-      					<label for="inputGcfservice">Which Service do you attend?</label>
-    					<select class="form-control" id="inputGcfservice" name="gcf_service">
-      						<option disabled>Saturday Services</option>
-      						<option>6:00 Traditional Service</option>
-      						<option disabled>Sunday Services</option>
-      						<option>8:00 Worship Service</option>
-      						<option>10:30 Worship Service</option>
-      						<option>3:00 Tagalog Worship Service</option>
-      						<option>5:30 Vesper Service</option>
-      					</select>
-      				</div>
-      				<div class="col-sm pb-2">
-      					<label for="inputYouthgroup">Are you part of a Y-Group?</label>
-    					<select class="form-control" id="inputYouthgroup" name="youth_group">
-      						<option>Yes</option>
-      						<option>No</option>
-      					</select>
-      				</div>
-      			</div>
-      			<div class="row">
-      				<div class="col-sm pb-2">
-      					<label for="inputYouthgroupleader">Who's your Y-Group Leader?</label>
-    					<input type="text" class="form-control" id="inputYouthgroupleader" name="youth_group_leader" placeholder="Leave blank if none">
-      				</div>
-      				<!-- Suggest turning into dropdown for uniformity of responses -->
-      				<div class="col-sm pb-2">
-      					<label for="inputFirsttime">Is this your first time in camp?</label>
-    					<select class="form-control" id="inputFirsttime" name="camp_first_time">
-      						<option>Yes</option>
-      						<option>No</option>
-      					</select>
-      				</div>
-              <div class="col-sm pb-2">
-                <label for="inputFirsttimeHear">Where did you hear about camp? (If first time)</label>
-                <input type="text" class="form-control" id="inputFirsttimeHear" name="firt_time_hear">
-              </div>
-      			</div>
-      			<br>
-      			<h4>Emergency Details</h4>
-      			<div class="row">
-      				<div class="col-sm pb-2">
-      					<label for="inputAllergies">Alleriges</label>
-    					<input type="text" class="form-control" id="inputAllergies" name="allergies" placeholder="e.g. Dairy, Eggs, etc.">
-      				</div>
-      				<div class="col-sm pb-2">
-      					<label for="inputMedications">Medications</label>
-    					<input type="text" class="form-control" id="inputMedications" name="medications">
-      				</div>
-      			</div>
-      			<div class="row">
-      				<div class="col-sm pb-2">
-      					<label for="inputNotes">Anything else we need to know?</label>
-    					<textarea class="form-control" id="inputNotes" name="notes" rows="3"></textarea>
-      				</div>
-      			</div>
-            <div class="row">
-              <label class="col-sm">Emergency Contact</label>
-            </div>
-            <div class="row">
-              <div class="col-sm pb-2">
-                <label for="inputEmergencyContactName">Name</label>
-                <input type="text" class="form-control" id="inputEmergencyContactName" name="emergency_name">
-              </div>
-              <div class="col-sm pb-2">
-                <label for="inputEmergencyContactNumber">Contact Number</label>
-                <input required type="text" class="form-control" id="inputMobileno" name="mobileno" placeholder="ex. 09xxxxxxxxx">
-              </div>
-            </div>
-            <!-- 
-      			<h4>Parent's Details</h4>
-      			<div class="row">
-      				<div class="col-6">
-      					<h5>Mother</h5>
-      					<div class="col-sm pb-2">
-      						<label for="inputMotherName">Name</label>
-    						<input required type="text" class="form-control" id="inputMotherName" name="mother_name">
-    						<label for="inputMotherBirthday">Birthday</label>
-    						<input required class="form-control" id="inputMotherBirthhday" name="mother_birthday" placeholder="MM/DD/YYY" type="text"/>
-    						<label for="inputMotherContactno">Contact No.</label>
-    						<input required type="text" class="form-control" id="inputMotherContactno" name="mother_contactno" placeholder="ex. 09xxxxxxxxx">
-      					</div>
-      				</div>
-      				<div class="col-6">
-      					<h5>Father</h5>
-      					<div class="col-sm pb-2">
-      						<label for="inputFatherName">Name</label>
-    						<input required type="text" class="form-control" id="inputFatherName" name="father_name">
-    						<label for="inputFatherBirthhday">Birthday</label>
-    						<input required class="form-control" id="inputFatherBirthhday" name="father_birthday" placeholder="MM/DD/YYY" type="text"/>
-    						<label for="inputFatherContactno">Contact No.</label>
-    						<input required type="text" class="form-control" id="inputFatherContactno" name="father_contactno" placeholder="ex. 09xxxxxxxxx">
-      					</div>
-      				</div>
-      			</div>
-            -->
-      			<br>
-      			<button id="form-sub" type="submit" class="form-sub btn btn-primary">Submit</button>
-      			<br>
-			</form>
- 		</div>
- 	</div>
-  <!-- Footer -->
-  	<br>
-  	<div class="footer container-fluid py-4 clearfix bg-dark ">
-    	<div class="float-left" style="color: white">
-      		<p>
-        	<b>Greenhills Christian Fellowship</b>
-        	<br>Ruby corner Garnet Roads, Ortigas Center,
-        	<br>Pasig City, Philippines 1605
-     		 </p>
-    	</div>
-    	<div class="float-right p-3">
-      		<span class="fa-layers fa-fw fa-3x"><a href="https://facebook.com/gcfyouthlive">
-        		<i class="fas fa-circle" style="color:#EF694B"></i>
-        		<i class="fab fa-facebook-f fa-inverse" data-fa-transform="shrink-6"></i>
-      		</a></span>
-      		<span class="fa-layers fa-fw fa-3x"><a href="https://www.instagram.com/gcfyouthlive/">
-        		<i class="fas fa-circle" style="color:#EF694B"></i>
-        		<i class="fab fa-instagram fa-inverse" data-fa-transform="shrink-6"></i>
-      		</a></span>
-      		<span class="fa-layers fa-fw fa-3x"><a href="mailto:youthlive@gcf.org.ph">
-        		<i class="fas fa-circle" style="color:#EF694B"></i>
-        		<i class="fas fa-envelope fa-inverse" data-fa-transform="shrink-7"></i>
-      		</a></span>
-    	</div>
-  	</div>
+  <div class="container mt-3">
+   <div id="form-header" class="text-center">
+    <h2 class="text-lowercase">high school camp sign-up form</h2>
+    <div class="media mx-auto">
+     <div class="row">
+      <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+        <img src="img/icon-1.svg" width="50%">
+        <div class="media-body">
+          <h4>1.</h4>
+          <p>fill out the online form below</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+       <img src="img/icon-2.svg" width="50%">
+       <div class="media-body">
+        <h4>2.</h4>              
+        <p>check email for waiver & QR code</p>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+     <img src="img/icon-3.svg" width="50%">
+     <div class="media-body">
+      <h4>3.</h4>
+      <p>print and sign waiver</p>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+   <img src="img/icon-4.svg" width="50%">
+   <div class="media-body">
+    <h4 class="align-self-start">4.</h4>
+    <p>present QR code, signed waiver, and pay camp fee</p>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div id="form-body" class="col-12 carousel-slide" data-ride="carousel">
+  <!-- Form body -->
+  <form id="camp-form">
+    <!-- General Details-->
+    <div id="step1" class="frm">
+      <h4>General Details</h4>
+      <label class="control-label">Name</label>
+      <div class="row">
+        <div class="col-sm pb-2">
+          <input required type="text" class="form-control" id="inputFirstname" name="first_name" placeholder="First name">
+        </div>
+        <div class="col-sm pb-2">
+          <input required type="text" class="form-control" id="inputNickname" name="nickname"  placeholder="Nickname">
+        </div>
+        <div class="col-sm pb-2">
+          <input required type="text" class="form-control" id="inputLastname" name="last_name"  placeholder="Last name">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm pb-2">
+          <label class="control-label col-form-label" for="birthdate">Birthday</label>
+          <input required class="form-control" id="inputBirthdate" name="birthday" placeholder="MM/DD/YYY" type="text"/>
+        </div>
+        <div class="col-sm pb-2">
+          <label class="control-label col-form-label">Gender</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="inputGender" id="inputGender" value="male" checked>
+            <label class="form-check-label" for="inputGender1">Male</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="inputGender" id="inputGender2" value="female">
+            <label class="form-check-label" for="inputGender2">Female</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm pb-2">
+          <button class="btn btn-primary open2" type="button"> Next </button>
+        </div>
+      </div>
+    </div>
+    <div id="step2" class="frm -hide">
+      <div class="row">
+       <div class="col-sm pb-2">
+        <label class="form-check-label" for="inputSchool">School</label>
+        <input required type="text" class="form-control" id="inputSchool" name="school" placeholder="School">
+      </div>
+      <div class="col-sm pb-2">
+        <label class="form-check-label" for="inputYear">Year</label>
+        <input required type="text" class="form-control" id="inputYear" name="year" placeholder="Year">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm pb-2">
+        <label for="inputEmail">Email address</label>
+        <input required type="email" class="form-control" id="inputEmail" name="email" placeholder="mail@example.com">
+      </div>
+      <div class="col-sm pb-2">
+        <label for="inputMobileno">Mobile Number</label>
+        <input required type="text" class="form-control" id="inputMobileno" name="mobileno" placeholder="ex. 09xxxxxxxxx">
+      </div>
+      <div class="col-sm pb-2">
+        <label for="inputFacebookid">Facebook ID</label>
+        <input required type="text" class="form-control" id="inputFacebookid" name="facebook_id" placeholder="ex. gcfyouthlive">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm pb-2">
+        <button class="btn btn-primary back2" type="button"> Back </button>
+        <button class="btn btn-primary open3" type="button"> Next </button>
+      </div>
+    </div>
+  </div>
+  <div id="step3" class="frm -hide">
+  <div class="row">
+   <div class="col-4 pb-2">
+     <label class="control-label col-form-label">Shirt Size</label>
+     <select required class="form-control" id="inputShirtsize" name="shirt_size">
+       <option>Extra Small</option>
+       <option>Small</option>
+       <option>Medium</option>
+       <option>Large</option>
+       <option>Extra Large</option>
+     </select>
+   </div>
+ </div>
+  <div class="row">
+    <div class="col-sm pb-2">
+      <button class="btn btn-primary back3" type="button"> Back </button>
+      <button class="btn btn-primary open4" type="button"> Next </button>
+    </div>
+  </div>
+</div>
+<div id="step4" class="frm -hide">
+  <div class="row">
+    <div class="col-sm pb-2">
+      <label for="inputYouthgroupleader">Who's your Y-Group Leader?</label>
+      <input type="text" class="form-control" id="inputYouthgroupleader" name="youth_group_leader" placeholder="Leave blank if none">
+    </div>
+  </div>
+  <div class="row">
+    <div c lass="col-sm pb-2">
+      <button class="btn btn-primary back4" button="button"> Back </button>
+      <button id="form-sub" type="submit" class="form-sub btn btn-primary">Submit</button>
+    </div>
+  </div>
+</div>
+</form>
+</div>
+</div>
+<!-- Footer -->
+<br>
+<div class="footer container-fluid py-4 clearfix bg-dark ">
+ <div class="float-left" style="color: white">
+  <p>
+   <b>Greenhills Christian Fellowship</b>
+   <br>Ruby corner Garnet Roads, Ortigas Center,
+   <br>Pasig City, Philippines 1605
+ </p>
+</div>
+<div class="float-right p-3">
+  <span class="fa-layers fa-fw fa-3x"><a href="https://facebook.com/gcfyouthlive">
+    <i class="fas fa-circle" style="color:#EF694B"></i>
+    <i class="fab fa-facebook-f fa-inverse" data-fa-transform="shrink-6"></i>
+  </a></span>
+  <span class="fa-layers fa-fw fa-3x"><a href="https://www.instagram.com/gcfyouthlive/">
+    <i class="fas fa-circle" style="color:#EF694B"></i>
+    <i class="fab fa-instagram fa-inverse" data-fa-transform="shrink-6"></i>
+  </a></span>
+  <span class="fa-layers fa-fw fa-3x"><a href="mailto:youthlive@gcf.org.ph">
+    <i class="fas fa-circle" style="color:#EF694B"></i>
+    <i class="fas fa-envelope fa-inverse" data-fa-transform="shrink-7"></i>
+  </a></span>
+</div>
+</div>
 
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <!-- Bootstrap date picker plugin -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-  <script>
-    $(document).ready(function(){
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- Bootstrap date picker plugin -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<script>
+  $(document).ready(function(){
     	// Honestly dont know how to do JS, pls fix -Hanz
       var date_input=$('input[name="birthday"]');
-      var date_input2=$('input[name="mother_birthday"]');
-      var date_input3=$('input[name="father_birthday"]');
       var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
       var options={
         format: 'mm/dd/yyyy',
@@ -306,16 +231,45 @@
       };
       // Same here pls fix -Hanz
       date_input.datepicker(options);
-      date_input2.datepicker(options);
-      date_input3.datepicker(options);
     })
 
-    $( "form" ).submit(function( event ) {
-  		console.log( $( this ).serializeArray() );
-  		event.preventDefault();
+  jQuery().ready(function() {
+    $(".open2").click(function() {
+      $(".frm").hide("fast");
+      $("#step2").show("slow");
     });
 
-    $('.id-of-next-btn').carousel('next')
+    $(".open3").click(function () {
+      $(".frm").hide("fast");
+      $("#step3").show("slow");
+    })
+
+    $(".open4").click(function () {
+      $(".frm").hide("fast");
+      $("#step4").show("slow");
+    })
+
+    $(".back2").click(function () {
+      $(".frm").hide("fast");
+      $("#step1").show("slow");
+    })
+
+    $(".back3").click(function () {
+      $(".frm").hide("fast");
+      $("#step2").show("slow");
+    })
+
+    $(".back4").click(function () {
+      $(".frm").hide("fast");
+      $("#step3").show("slow");
+    })
+  })
+
+
+  $( "form" ).submit(function( event ) {
+    console.log( $( this ).serializeArray() );
+    event.preventDefault();
+  });
 </script>
 
 
