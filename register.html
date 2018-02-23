@@ -13,7 +13,7 @@
 <body>
   <!-- Navbar  -->
   <nav class="navbar navbar-expand-sm navbar-dark clearfix bg-dark">
-    <a class="navbar-brand col" href="/"><img src="img/camp-logo-white.svg" width="30%"></a>
+    <a class="navbar-brand col" href="/"><img src="img/camp-logo-white.svg" height="40px"></a>
     <button class="navbar-toggler col-2" type="button" data-toggle="collapse" data-target="#navbarCollapsible" aria-controls="navbarCollapsible" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -75,9 +75,10 @@
 	 			</div>
 	 		</div>
  		</div>
- 		<div id="form-body" class="col-12">
+ 		<div id="form-body" class="col-12 carousel-slide" data-ride="carousel">
     <!-- Form body -->
  			<form id="camp-form">
+        <!-- General Details-->
  				<h4>General Details</h4>
  				<label class="control-label">Name</label>
 				<div class="row">
@@ -213,7 +214,7 @@
       				</div>
       			</div>
             <div class="row">
-              <label class="col-sm pb-2">Emergency Contact</label>
+              <label class="col-sm">Emergency Contact</label>
             </div>
             <div class="row">
               <div class="col-sm pb-2">
@@ -312,8 +313,9 @@
     $( "form" ).submit(function( event ) {
   		console.log( $( this ).serializeArray() );
   		event.preventDefault();
+    });
 
-	});
+    $('.id-of-next-btn').carousel('next')
 </script>
 
 
