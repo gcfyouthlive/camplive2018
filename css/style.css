@@ -99,7 +99,7 @@ input.form-control:disabled {
 	background-color: #ffffff;
 }
 
-a:hover {
+a {
 	cursor: pointer;
 }
 
