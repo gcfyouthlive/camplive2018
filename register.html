@@ -78,10 +78,10 @@
 </div>
 <div id="form-body" class="col-12 carousel-slide" data-ride="carousel">
   <!-- Form body -->
-  <form id="camp-form">
+  <form id="camp-form" method="post">
     <!-- General Details-->
+    <h4>Tell us about yourself!</h4>
     <div id="step1" class="frm">
-      <h4>General Details</h4>
       <label class="control-label">Name</label>
       <div class="row">
         <div class="col-sm pb-2">
@@ -177,7 +177,7 @@
     </div>
   </div>
   <div class="row">
-    <div c lass="col-sm pb-2">
+    <div class="col-sm pb-2">
       <button class="btn btn-primary back4" button="button"> Back </button>
       <button id="form-sub" type="submit" class="form-sub btn btn-primary">Submit</button>
     </div>
@@ -267,10 +267,13 @@
 
 
   $( "form" ).submit(function( event ) {
-    console.log( $( this ).serializeArray() );
+      event.preventDefault();
     const form_data = $(this).serializeArray();
     $.post('https://api.gcfyouthlive.com/campers', form_data, function(result) {
-      console.log(result);
+        $(".frm").hide("fast");
+        $("#step1").show("slow");
+        $("#camp-form")[0].reset();
+        alert("Great! Now check your email for further steps!");
     })
   });
 </script>
