@@ -101,7 +101,7 @@
 								</div>
 								<div class="row">
 									<div class="col-sm-6">
-										<input required type="text" class="form-control" name="mobileno" placeholder="mobile number" />
+										<input required type="number" minlength="11" class="form-control" name="mobileno" placeholder="mobile number" />
 									</div>
 									<div class="col-sm-6">
 										<input required type="text" class="form-control" name="shirt_size" placeholder="shirt size" />
@@ -159,6 +159,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <!-- Bootstrap date picker plugin -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
 <script>
   $(document).ready(function(){
     var date_input=$('input[name="birthday"]');
@@ -172,22 +173,63 @@
     date_input.datepicker(options);
 
 		$(".open2").click(function() {
-      $(".frm").hide("fast");
-      $("#step2").show("slow");
+      var form = $("#camp-form")
+      form.validate({
+        rules: {
+          email: {
+            required: true
+          },
+          full_name: {
+            required: true
+          },
+          nickname: {
+            required: true
+          },
+          gender: {
+            required: true
+          },
+          birthday: {
+            required: true
+          }
+        },
+        messages: {
+          email: {
+            required: "You forgot to to tell us your email!"
+          },
+          full_name: {
+            required: "You forgot to tell us your name!"
+          },
+          nickname: {
+            required: "You forgot tell us your nickname!"
+          },
+          gender: {
+            required: "You forgot to tell us your gender!"
+          },
+          birthday: {
+            required: "You forgot to tell us your birthday!"
+          }
+        }
+      });
+      if (form.valid() == true) {
+
+        $(".frm").hide("fast");
+        $("#step2").show("slow");
+      }
     });
 
     $(".back2").click(function () {
       $(".frm").hide("fast");
       $("#step1").show("slow");
-    })
+    });
 
-		$( "form" ).submit(function( event ) {
-	    console.log( $( this ).serializeArray() );
-	    const form_data = $(this).serializeArray();
-	    $.post('https://api.gcfyouthlive.com/campers', form_data, function(result) {
-	      console.log(result);
-	    })
-	  });
+    $( "form" ).submit(function (e) {
+      e.preventDefault();
+      const form_data = $(this).serializeArray();
+      $.post('https://api.gcfyouthlive.com/campers', form_data, function(result) {
+        console.log(result);
+      });
+    });
+
 	});
 </script>
 
