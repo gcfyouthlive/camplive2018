@@ -206,8 +206,19 @@
 		</div>
 	</section>
 
-  <footer class="container-fluid bg-dark px-3 py-4">
-    <div class="mr-auto text-white">
+  <footer class="container-fluid bg-dark px-5 pt-4 pb-2 d-md-flex flex-row-reverse">
+    <div class="frm ml-auto">
+      <h4 class="text-white">Any questions?</h4>
+      <form class="">
+        <input required type="text" class="form-control" id="inputName" name="name" placeholder="name" required>
+        <input required type="email" class="form-control" id="inputEmail" name="email" placeholder="email" required></input>
+        <textarea required class="form-control" id="inputMessage" name="message" rows="3" placeholder="your message here.." required></textarea>
+        <div class="text-right">
+          <button id="form-sub" type="submit" class="form-sub btn btn-light">Submit</button>
+        </div>
+      </form>
+    </div>
+    <div class="mr-auto text-white pt-3">
       <img src="img/gcf-logo-white.png" width=100px/>
       <div class="py-3">
         <b>Greenhills Christian Fellowship</b>
@@ -231,15 +242,6 @@
       <div class="pb-3">
         &copy; 2018 Greenhills Christian Fellowship
       </div>
-    </div>
-    <div class="frm" style="color: white; min-width: 50%">
-      <form class="">
-        <input required type="text" class="form-control" id="inputName" name="name" placeholder="name" required>
-        <input required type="email" class="form-control" id="inputEmail" name="email" placeholder="email" required></input>
-        <textarea required class="form-control" id="inputMessage" name="message" rows="3" placeholder="your message here.." required></textarea>
-        <br>
-        <button id="form-sub" type="submit" class="form-sub btn btn-light">Submit</button>
-      </form>
     </div>
   </footer>
 

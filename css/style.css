@@ -293,3 +293,15 @@ section#aboutcamp {
 	color: white;
 	background-color: #EF694B;
 }
+
+@media (min-width: 576px) {
+	footer .frm {
+		min-width: 50%;
+	}
+}
+
+@media (min-width: 768px) {
+	footer .frm {
+		min-width: 30%;
+	}
+}
