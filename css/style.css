@@ -7,6 +7,17 @@ html, body {
 body {
 	font-family: 'Muli', sans-serif;
 	font-size: 16px;
+	color: #5C5C5C;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	color: #1a1a1a;
+}
+
+@media (min-width: 576px) {
+	body {
+		font-size: 18px;
+	}
 }
 
 @media (min-width: 576px) {
@@ -61,6 +72,11 @@ section {
 	list-style: none;
 }
 
+#faqs li {
+	margin-bottom: 0.9rem;
+	color: #1a1a1a;
+}
+
 .arrow-down {
 	position: absolute;
 	bottom: 0;
@@ -86,6 +102,7 @@ section {
 #faqs .answer {
 	margin: 0.3rem 0;
 	padding: 0;
+	color: #5C5C5C;
 }
 
 #hsregform {
@@ -112,7 +129,6 @@ a {
 
 #details {
 	background-color: white;
-	color: black;
 }
 
 .camp-details {
@@ -150,14 +166,6 @@ section#youthlive {
     opacity: 1; /* Firefox */
 }
 
-.frm button {
-	padding: 0.8rem 4rem 0.8rem 0.8rem;
-	margin: 1.2rem 0;
-	background-color:#EF694B;
-	border-radius: 0;
-	border: none
-}
-
 #form-proper {
 	background: none;
 }
@@ -180,6 +188,18 @@ section#youthlive {
 
 #form-instructions img {
 	padding: 20px
+}
+
+.tagline {
+	font-size: 2.8rem;
+	color: #1a1a1a;
+	margin-top: 2rem;
+	margin-bottom: 1.7rem;
+}
+
+.camp-text {
+	font-size: 1.5rem;
+	line-height: 2.25rem;
 }
 
 section#speaker {
@@ -207,4 +227,57 @@ section#speaker img {
 		bottom:0;
 		margin:auto;
 	}
+}
+
+section#campsite {
+	text-align: center;
+}
+
+section#campsite img {
+	width: 100%;
+}
+
+@media (min-width: 576px) {
+	section#campsite img {
+		width: 90%;
+	}
+}
+
+@media (min-width: 768px) {
+	section#campsite {
+		text-align: left;
+	}
+
+	section#campsite img {
+		width: 90%;
+		position:absolute;
+		top:0;
+		bottom:0;
+		margin:auto;
+	}
+}
+
+section#aboutcamp {
+	min-height: 50% !important;
+}
+
+.frm .btn {
+	padding: 0.8rem 4rem 0.8rem 0.8rem;
+	margin: 1.2rem 0;
+	background-color:#EF694B;
+	border-radius: 0;
+	border: none;
+	color: white;
+}
+
+.btn.register-button {
+	color: #EF694B;
+	border-color: #EF694B;
+	background-color: transparent;
+	border-radius: 0;
+}
+
+.register-button:hover {
+	color: white;
+	background-color: #EF694B;
 }
