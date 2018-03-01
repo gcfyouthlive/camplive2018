@@ -181,3 +181,30 @@ section#youthlive {
 #form-instructions img {
 	padding: 20px
 }
+
+section#speaker {
+	text-align: center;
+}
+
+section#speaker img {
+	width: 80%;
+}
+
+@media (min-width: 576px) {
+	section#speaker img {
+		width: 50%;
+	}
+}
+
+@media (min-width: 768px) {
+	section#speaker {
+		text-align: left;
+	}
+	section#speaker img {
+		width: 90%;
+		position:absolute;
+		top:0;
+		bottom:0;
+		margin:auto;
+	}
+}
