@@ -169,7 +169,7 @@ section#youthlive {
 
 .frm input:focus::placeholder,
 .frm textarea:focus::placeholder  {
-	color: transparent;
+	/* color: transparent; */
 }
 
 .frm input::placeholder,
