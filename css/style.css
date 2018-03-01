@@ -198,8 +198,13 @@ section#youthlive {
 	}
 }
 
+#form-instructions {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
 #form-instructions img {
-	padding: 20px
+	margin-top: 1rem;
 }
 
 .tagline {
