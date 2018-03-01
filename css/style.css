@@ -1,4 +1,6 @@
 html, body {
+	margin: 0;
+	padding: 0;
 	height: 100%;
 }
 
@@ -100,7 +102,7 @@ a {
 }
 
 .container {
-	max-width: 720px;
+	max-width: 768px;
 }
 
 .section-title {
@@ -124,4 +126,58 @@ section#youthlive {
 	margin-bottom: 0;
 	padding-top: 0;
 	padding-bottom: 0;
+}
+
+.frm.-hide {
+  display: none;
+}
+
+.frm input {
+	padding: 0.8rem 0.8rem;
+	margin: 1.2rem 0;
+	border-radius: 0;
+	border: none;
+}
+
+.frm input:focus::placeholder,
+.frm textarea:focus::placeholder  {
+	color: transparent;
+}
+
+.frm input::placeholder,
+.frm textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+		color: #EF694B;
+    opacity: 1; /* Firefox */
+}
+
+.frm button {
+	padding: 0.8rem 4rem 0.8rem 0.8rem;
+	margin: 1.2rem 0;
+	background-color:#EF694B;
+	border-radius: 0;
+	border: none
+}
+
+#form-proper {
+	background: none;
+}
+
+@media (min-width: 576px) {
+	#form-proper {
+		background: linear-gradient(90deg, #FFFFFF 50%, #EDEFEE 50%);
+	}
+}
+
+#form-body {
+	background-color: #EDEFEE
+}
+
+@media (min-width: 576px) {
+	#form-body {
+		background: none;
+	}
+}
+
+#form-instructions img {
+	padding: 20px
 }
