@@ -1,3 +1,15 @@
+@font-face {
+	font-family: "Muli";
+	src: url("../fonts/Muli-Regular.ttf");
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "Muli";
+	src: url("../fonts/Muli-Bold.ttf");
+	font-weight: 700;
+}
+
 html, body {
 	margin: 0;
 	padding: 0;
@@ -157,7 +169,7 @@ section#youthlive {
 
 .frm input:focus::placeholder,
 .frm textarea:focus::placeholder  {
-	color: transparent;
+	/* color: transparent; */
 }
 
 .frm input::placeholder,
