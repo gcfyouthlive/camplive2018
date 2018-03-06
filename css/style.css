@@ -131,7 +131,7 @@ a {
 }
 
 .container {
-	max-width: 768px;
+	max-width: 800px;
 }
 
 .section-title {
@@ -160,11 +160,22 @@ section#youthlive {
   display: none;
 }
 
-.frm input {
-	padding: 0.8rem 0.8rem;
+.frm .form-row {
 	margin: 1.2rem 0;
+}
+
+.frm label {
+	color: #EF694B;
+	font-size: 0.75rem;
+	font-weight: 700;
+	text-transform: lowercase;
+}
+
+.frm input,
+.frm textarea {
+	padding: 0.8rem 0.8rem;
 	border-radius: 0;
-	border: none;
+	border-color: transparent;
 }
 
 .frm input:focus::placeholder,
@@ -174,8 +185,12 @@ section#youthlive {
 
 .frm input::placeholder,
 .frm textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-		color: #EF694B;
-    opacity: 1; /* Firefox */
+		/* color: #EF694B; */
+    /* opacity: 1; /* Firefox */ */
+}
+
+.frm input[type="button"] {
+	opacity: 0.8;
 }
 
 #form-proper {
@@ -195,12 +210,19 @@ section#youthlive {
 @media (min-width: 576px) {
 	#form-body {
 		background: none;
+		padding-left: 3rem;
 	}
 }
 
 #form-instructions {
 	padding-top: 50px;
 	padding-bottom: 50px;
+}
+
+@media (min-width: 576px) {
+	#form-instructions {
+		padding-right: 3rem;
+	}
 }
 
 #form-instructions img {
@@ -278,12 +300,17 @@ section#aboutcamp {
 	min-height: 50% !important;
 }
 
+.frm .dropdown-item {
+	border-radius: 0;
+	border-color: transparent;
+}
+
 .frm .btn {
 	padding: 0.8rem 4rem 0.8rem 0.8rem;
 	margin: 1.2rem 0;
 	background-color:#EF694B;
 	border-radius: 0;
-	border: none;
+	border-color: transparent;
 	color: white;
 }
 
@@ -309,4 +336,13 @@ section#aboutcamp {
 	footer .frm {
 		min-width: 30%;
 	}
+}
+
+input[type="tel"]::-webkit-outer-spin-button,
+input[type="tel"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="tel"] {
+    -moz-appearance: textfield;
 }
