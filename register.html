@@ -6,6 +6,7 @@
 	<link rel="icon" href="img/favicon.svg">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 </head>
 <body>
   <!-- Navbar  -->
@@ -68,94 +69,106 @@
 						</div>
 					</div>
 				</div>
-				<div id="form-body" class="col-sm-6"  style="padding-top:50px">
+				<div id="form-body" class="col-sm-6" style="padding-top:50px">
 					<div class="col-12">
 						<div class="row">
 							<div class="form-title" style="color:#EF694B;font-size:2rem;line-height:normal;padding-bottom:2rem">
-								tell us <img src="img/favicon.svg" height=40px style="margin-top:-1.5rem;margin-left:-0.3rem"><br>about you
+								tell us <img src="img/favicon.svg" height=40px style="margin-top:-1.5rem;margin-left:-0.3rem"><br>about yourself
 							</div>
 						</div>
 						<div class="row">
-						  <form id="camp-form">
-						    <div id="step1" class="frm">
-									<div class="form-row">
-										<div class="col-12">
-											<label for="email">Email</label>
-											<input required type="email" class="form-control" name="email" placeholder="email" />
-										</div>
+					    <form id="step1" class="frm needs-validation">
+								<div class="form-row">
+									<div class="col-12">
+										<label for="email">Email</label>
+										<input required type="email" class="form-control" name="email" placeholder="email" />
 									</div>
-									<div class="form-row">
-										<div class="col-sm-6">
-											<label for="first_name">First name</label>
-											<input required type="text" class="form-control" name="first_name" placeholder="first name" />
-										</div>
-										<div class="col-sm-6">
-											<label for="last_name">Last name</label>
-											<input required type="text" class="form-control" name="last_name" placeholder="last name" />
-										</div>
-										<div class="col-sm-6">
-											<label for="nickname">Nickname</label>
-											<input required type="text" class="form-control" name="nickname" placeholder="nickname" />
-										</div>
-										<div class="col-sm-6">
-											<label for="gender">Gender</label>
-											<input required type="button" class="form-control text-left dropdown-toggle" name="gender" placeholder="gender" value="gender" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
-											<div class="dropdown-menu" style="width:100%">
+								</div>
+								<div class="form-row">
+									<div class="col-sm-6">
+										<label for="first_name">First name</label>
+										<input required type="text" class="form-control" name="first_name" placeholder="first name" />
+									</div>
+									<div class="col-sm-6">
+										<label for="last_name">Last name</label>
+										<input required type="text" class="form-control" name="last_name" placeholder="last name" />
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="col-sm-6">
+										<label for="nickname">Nickname</label>
+										<input required type="text" class="form-control" name="nickname" placeholder="nickname" />
+									</div>
+									<div class="col-sm-6">
+										<label for="gender">Gender</label>
+										<div class="input-group">
+											<input required type="button" class="form-control text-left dropdown-toggle" pattern="Male|Female" name="gender" value="gender" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
+											<div class="dropdown-menu">
 									      <a class="dropdown-item">Male</a>
 									      <a class="dropdown-item">Female</a>
 									    </div>
 										</div>
 									</div>
-									<div class="form-row">
-										<div class="col-sm-8">
-											<label for="birthday">Birthday (MM/DD/YYYY)</label>
-											<input required type="text" class="form-control" name="birthday" placeholder="birthday" required />
-										</div>
-									</div>
-						      <div class="float-right">
-						      	<button class="btn btn-primary btn-control open2" type="button">next</button>
-						      </div>
-						    </div>
-						    <div id="step2" class="frm -hide">
-									<div class="form-row">
-										<div class="col-12">
-											<label for="school">School</label>
-											<input required type="text" class="form-control" name="school" placeholder="school" required />
-										</div>
-									</div>
-									<div class="form-row">
-										<div class="col-sm-6">
-											<label for="year">Incoming Year Level</label>
-											<input required type="button" class="form-control text-left dropdown-toggle" name="year" placeholder="year" value="year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
-											<div class="dropdown-menu" style="width:100%">
-												<a class="dropdown-item">Gr 7</a>
-												<a class="dropdown-item">Gr 8</a>
-												<a class="dropdown-item">Gr 9</a>
-												<a class="dropdown-item">Gr 10</a>
-												<a class="dropdown-item">Gr 11</a>
-												<a class="dropdown-item">Gr 12</a>
+								</div>
+								<div class="form-row">
+									<div class="col-sm-12">
+										<label for="birthday">Birthday (MM/DD/YYYY)</label>
+										<div class="row">
+											<div class="col-3 pr-1">
+												<input required type="number" min=01 max=12 class="form-control" name="month" placeholder="MM" />
+											</div>
+											<div class="col-3 px-1">
+												<input required type="number" min=01 max=31 class="form-control" name="day" placeholder="DD" />
+											</div>
+											<div class="col-6 pl-1">
+												<input required type="number" min=1980 max=2008 class="form-control" name="year" placeholder="YYYY" />
 											</div>
 										</div>
-										<div class="col-sm-6">
-											<label for="facebook_id">Facebook id</label>
-											<input required type="text" class="form-control" name="facebook_id" placeholder="facebook id" required />
+									</div>
+								</div>
+					      <div class="float-right">
+					      	<button class="btn btn-primary btn-control open2" type="button">next</button>
+					      </div>
+					    </form>
+					    <form id="step2" class="frm -hide needs-validation">
+								<div class="form-row">
+									<div class="col-12">
+										<label for="school">School</label>
+										<input required type="text" class="form-control" name="school" placeholder="school" required />
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="col-sm-6">
+										<label for="year">Incoming Year Level</label>
+										<input required type="button" class="form-control text-left dropdown-toggle" name="year" placeholder="year" value="year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
+										<div class="dropdown-menu" style="width:100%">
+											<a class="dropdown-item">Gr 7</a>
+											<a class="dropdown-item">Gr 8</a>
+											<a class="dropdown-item">Gr 9</a>
+											<a class="dropdown-item">Gr 10</a>
+											<a class="dropdown-item">Gr 11</a>
+											<a class="dropdown-item">Gr 12</a>
 										</div>
 									</div>
-									<div class="form-row">
-										<div class="col-sm-6">
-											<label for="mobileno">Mobile no (09XXXXXXXXX)</label>
-											<input required type="tel" minlength="11" class="form-control" name="mobileno" placeholder="mobile number" required />
-										</div>
-										<div class="col-sm-6">
-											<label for="shirt_size">Shirt Size</label>
-											<input required type="text" class="form-control" name="shirt_size" placeholder="shirt size" required />
-										</div>
+									<div class="col-sm-6">
+										<label for="facebook_id">Facebook id</label>
+										<input required type="text" class="form-control" name="facebook_id" placeholder="facebook id" required />
 									</div>
-						      <div class="float-right">
-						      	<button class="btn btn-primary btn-control back2" type="button">back</button>
-										<button id="form-sub" type="submit" class="form-sub btn btn-primary btn-control">Submit</button>
-						      </div>
-						    </div>
+								</div>
+								<div class="form-row">
+									<div class="col-sm-6">
+										<label for="mobileno">Mobile no (09XXXXXXXXX)</label>
+										<input required type="tel" minlength="11" class="form-control" name="mobileno" placeholder="mobile number" required />
+									</div>
+									<div class="col-sm-6">
+										<label for="shirt_size">Shirt Size</label>
+										<input required type="text" class="form-control" name="shirt_size" placeholder="shirt size" required />
+									</div>
+								</div>
+					      <div class="float-right">
+					      	<button class="btn btn-primary btn-control back2" type="button">back</button>
+									<button id="form-sub" type="submit" class="form-sub btn btn-primary btn-control">Submit</button>
+					      </div>
 							</form>
 						</div>
 					</div>
@@ -215,85 +228,61 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/popper.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
 <script>
   $(document).ready(function(){
-    var date_input=$('input[name="birthday"]');
-    var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-    var options={
-      format: 'mm/dd/yyyy',
-      container: container,
-      todayHighlight: true,
-      autoclose: true,
-    };
-    date_input.datepicker(options);
+		var $root = $('html, body');
 
 		$(".frm a").click(function() {
 			var value = $(this).html();
-			$(this).parents('.dropdown-menu').siblings('input').prop("value",value).css("opacity","1").addClass("is-valid");
+			$(this).parents('.dropdown-menu').siblings('input').prop("value",value).css("opacity","1");
 		});
 
-		// $(".open2").click(function() {
-    //   var form = $("#camp-form")
-    //   form.validate({
-    //     rules: {
-    //       email: {
-    //         required: true
-    //       },
-    //       full_name: {
-    //         required: true
-    //       },
-    //       nickname: {
-    //         required: true
-    //       },
-    //       gender: {
-    //         required: true
-    //       },
-    //       birthday: {
-    //         required: true
-    //       }
-    //     },
-    //     messages: {
-    //       email: {
-    //         required: "You forgot to to tell us your email!"
-    //       },
-    //       full_name: {
-    //         required: "You forgot to tell us your name!"
-    //       },
-    //       nickname: {
-    //         required: "You forgot tell us your nickname!"
-    //       },
-    //       gender: {
-    //         required: "You forgot to tell us your gender!"
-    //       },
-    //       birthday: {
-    //         required: "You forgot to tell us your birthday!"
-    //       }
-    //     }
-    //   });
-    //   if (form.valid() == true) {
+		// window.addEventListener('load', function() {
+    // // Fetch all the forms we want to apply custom Bootstrap validation styles to
+	  //   var forms = document.getElementsByClassName('needs-validation');
+	  //   // Loop over them and prevent submission
+	  //   var validation = Array.prototype.filter.call(forms, function(form) {
+	  //     form.addEventListener('submit', function(event) {
+	  //       if (form.checkValidity() === false) {
+	  //         event.preventDefault();
+	  //         event.stopPropagation();
+	  //       }
+	  //       form.classList.add('was-validated');
+	  //     }, false);
+	  //   });
+	  // }, false);
+
+		$(".open2").click(function() {
+			var form = $(".frm#step1")[0];
+			console.log(form.checkValidity());
+			if (form.checkValidity() === false) {
+				form.classList.add('was-validated');
+			}
+		});
+		// $(".open2").click(function () {
     //
-    //     $(".frm").hide("fast");
-    //     $("#step2").show("slow");
-    //   }
-    // });
-
-		$(".open2").click(function () {
-			$(".frm#step1").hide("fast");
-			$("#step2").show("slow");
-		});
+		// 	$(".frm#step1").hide("fast");
+		// 	$("#step2").show("slow");
+		// 	$root.animate({
+		// 		scrollTop: $("#form-body").offset().top
+		// 	}, 500);
+		// 	return false;
+		// });
     $(".back2").click(function () {
       $(".frm#step2").hide("fast");
       $("#step1").show("slow");
+			$root.animate({
+				scrollTop: $("#form-body").offset().top
+			}, 500);
     });
 
-    $( "form" ).submit(function (e) {
-      e.preventDefault();
-      const form_data = $(this).serializeArray();
-      $.post('https://api.gcfyouthlive.com/campers', form_data, function(result) {
-        console.log(result);
-      });
-    });
+    // $( "form" ).submit(function (e) {
+    //   e.preventDefault();
+    //   const form_data = $(this).serializeArray();
+    //   $.post('https://api.gcfyouthlive.com/campers', form_data, function(result) {
+    //     console.log(result);
+    //   });
+    // });
 
 	});
 </script>

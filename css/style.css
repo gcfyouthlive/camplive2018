@@ -219,14 +219,17 @@ section#youthlive {
 	padding-bottom: 50px;
 }
 
+#form-instructions img {
+	margin-top: 1rem;
+}
+
 @media (min-width: 576px) {
 	#form-instructions {
 		padding-right: 3rem;
 	}
-}
-
-#form-instructions img {
-	margin-top: 1rem;
+	#form-instructions img {
+		padding: 0.8rem;
+	}
 }
 
 .tagline {
@@ -339,10 +342,13 @@ section#aboutcamp {
 }
 
 input[type="tel"]::-webkit-outer-spin-button,
-input[type="tel"]::-webkit-inner-spin-button {
+input[type="tel"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-inner-spin-button
+input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-input[type="tel"] {
+input[type="tel"],
+input[type="number"] {
     -moz-appearance: textfield;
 }
