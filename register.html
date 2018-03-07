@@ -101,7 +101,7 @@
 									<div class="col-sm-6">
 										<label for="gender">Gender</label>
 										<div class="input-group">
-											<input required type="button" class="form-control text-left dropdown-toggle" pattern="Male|Female" name="gender" value="gender" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
+											<input required type="text" class="form-control text-left dropdown-toggle readonly" pattern="Male|Female" name="gender" placeholder="gender" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
 											<div class="dropdown-menu">
 									      <a class="dropdown-item">Male</a>
 									      <a class="dropdown-item">Female</a>
@@ -133,13 +133,13 @@
 								<div class="form-row">
 									<div class="col-12">
 										<label for="school">School</label>
-										<input required type="text" class="form-control" name="school" placeholder="school" required />
+										<input required type="text" class="form-control" name="school" placeholder="school" />
 									</div>
 								</div>
 								<div class="form-row">
 									<div class="col-sm-6">
 										<label for="year">Incoming Year Level</label>
-										<input required type="button" class="form-control text-left dropdown-toggle" name="year" placeholder="year" value="year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
+										<input required type="text" class="form-control text-left dropdown-toggle readonly" name="year" placeholder="year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
 										<div class="dropdown-menu" style="width:100%">
 											<a class="dropdown-item">Gr 7</a>
 											<a class="dropdown-item">Gr 8</a>
@@ -151,21 +151,37 @@
 									</div>
 									<div class="col-sm-6">
 										<label for="facebook_id">Facebook id</label>
-										<input required type="text" class="form-control" name="facebook_id" placeholder="facebook id" required />
+										<input required type="text" class="form-control" name="facebook_id" placeholder="facebook id" />
 									</div>
 								</div>
 								<div class="form-row">
 									<div class="col-sm-6">
 										<label for="mobileno">Mobile no (09XXXXXXXXX)</label>
-										<input required type="tel" minlength="11" class="form-control" name="mobileno" placeholder="mobile number" required />
+										<input required type="tel" minlength="11" class="form-control" name="mobileno" placeholder="mobile number"d />
 									</div>
 									<div class="col-sm-6">
 										<label for="shirt_size">Shirt Size</label>
-										<input required type="text" class="form-control" name="shirt_size" placeholder="shirt size" required />
+										<input required type="text" class="form-control" name="shirt_size" placeholder="shirt size" />
 									</div>
 								</div>
 					      <div class="float-right">
 					      	<button class="btn btn-primary btn-control back2" type="button">back</button>
+									<button class="btn btn-primary btn-control open3" type="button">next</button>
+					      </div>
+							</form>
+							<form id="step3" class="frm -hide needs-validation">
+								<div class="form-row">
+									<div class="col-12">
+										<div class="form-check">
+										  <input required class="form-check-input" type="checkbox" name="policy" id="policyCheck">
+										  <label class="form-check-label" for="policyCheck">
+										    I agree to the Terms and Conditions
+										  </label>
+										</div>
+									</div>
+								</div>
+					      <div class="float-right">
+					      	<button class="btn btn-primary btn-control back3" type="button">back</button>
 									<button id="form-sub" type="submit" class="form-sub btn btn-primary btn-control">Submit</button>
 					      </div>
 							</form>
@@ -230,46 +246,61 @@
 <script>
   $(document).ready(function(){
 		var $root = $('html, body');
+		$('.readonly').keydown(function(e) {
+			e.preventDefault();
+		});
+		$('.readonly').on('keydown paste', function(e) {
+			e.preventDefault();
+		});
+		$('.readonly').on('focus', function() {
+			$(this).trigger('blur');
+		});
 
 		$(".frm a").click(function() {
 			var value = $(this).html();
 			$(this).parents('.dropdown-menu').siblings('input').prop("value",value).css("opacity","1");
 		});
 
-		// window.addEventListener('load', function() {
-    // // Fetch all the forms we want to apply custom Bootstrap validation styles to
-	  //   var forms = document.getElementsByClassName('needs-validation');
-	  //   // Loop over them and prevent submission
-	  //   var validation = Array.prototype.filter.call(forms, function(form) {
-	  //     form.addEventListener('submit', function(event) {
-	  //       if (form.checkValidity() === false) {
-	  //         event.preventDefault();
-	  //         event.stopPropagation();
-	  //       }
-	  //       form.classList.add('was-validated');
-	  //     }, false);
-	  //   });
-	  // }, false);
-
 		$(".open2").click(function() {
 			var form = $(".frm#step1")[0];
+			form.classList.add('was-validated');
+			if (form.checkValidity() === false) {
+				return false;
+			}
+			else {
+				$(".frm#step1").hide("fast");
+				$(".frm#step2").show("slow");
+				$root.animate({
+					scrollTop: $("#form-body").offset().top
+				}, 500);
+				return true;
+			}
+		});
+    $(".back2").click(function () {
+      $(".frm#step2").hide("fast");
+      $(".frm#step1").show("slow");
+			$root.animate({
+				scrollTop: $("#form-body").offset().top
+			}, 500);
+    });
+		$(".open3").click(function() {
+			var form = $(".frm#step2")[0];
 			console.log(form.checkValidity());
 			if (form.checkValidity() === false) {
 				form.classList.add('was-validated');
 			}
+			else {
+				$(".frm#step2").hide("fast");
+				$(".frm#step3").show("slow");
+				$root.animate({
+					scrollTop: $("#form-body").offset().top
+				}, 500);
+				// 	return false;
+			}
 		});
-		// $(".open2").click(function () {
-    //
-		// 	$(".frm#step1").hide("fast");
-		// 	$("#step2").show("slow");
-		// 	$root.animate({
-		// 		scrollTop: $("#form-body").offset().top
-		// 	}, 500);
-		// 	return false;
-		// });
-    $(".back2").click(function () {
-      $(".frm#step2").hide("fast");
-      $("#step1").show("slow");
+		$(".back3").click(function () {
+      $(".frm#step3").hide("fast");
+      $(".frm#step2").show("slow");
 			$root.animate({
 				scrollTop: $("#form-body").offset().top
 			}, 500);

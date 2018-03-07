@@ -303,6 +303,11 @@ section#aboutcamp {
 	min-height: 50% !important;
 }
 
+.frm .dropdown-menu {
+	min-width:inherit;
+	width: 100%;
+}
+
 .frm .dropdown-item {
 	border-radius: 0;
 	border-color: transparent;
