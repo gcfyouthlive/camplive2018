@@ -11,7 +11,7 @@
   <!-- Navbar  -->
   <nav class="navbar navbar-expand-sm navbar-dark clearfix bg-dark">
 		<div class="container" style="max-width:1200px">
-    	<a class="navbar-brand" href="/"><img src="img/camp-logo-white.svg" height="40px"></a>
+    	<a class="navbar-brand" href="/"><img class="mr-3" src="img/camp-logo-white.svg" height="40px">HS Camp Registration</a>
 		</div>
   </nav>
 	<div id="form-proper">
@@ -114,13 +114,13 @@
 										<label for="birthday">Birthday (MM/DD/YYYY)</label>
 										<div class="row">
 											<div class="col-3 pr-1">
-												<input required type="number" min=01 max=12 class="form-control" name="month" placeholder="MM" />
+												<input required type="number" min=01 max=12 class="form-control" name="birthmonth" placeholder="MM" />
 											</div>
 											<div class="col-3 px-1">
-												<input required type="number" min=01 max=31 class="form-control" name="day" placeholder="DD" />
+												<input required type="number" min=01 max=31 class="form-control" name="birthday" placeholder="DD" />
 											</div>
 											<div class="col-6 pl-1">
-												<input required type="number" min=1980 max=2008 class="form-control" name="year" placeholder="YYYY" />
+												<input required type="number" min=1980 max=2008 class="form-control" name="birthyear" placeholder="YYYY" />
 											</div>
 										</div>
 									</div>
@@ -147,21 +147,24 @@
 											<a class="dropdown-item">Gr 10</a>
 											<a class="dropdown-item">Gr 11</a>
 											<a class="dropdown-item">Gr 12</a>
+											<a class="dropdown-item">N/A</a>
 										</div>
 									</div>
 									<div class="col-sm-6">
-										<label for="facebook_id">Facebook id</label>
-										<input required type="text" class="form-control" name="facebook_id" placeholder="facebook id" />
+										<label for="facebook_id">Facebook id (optional)</label>
+										<input type="text" class="form-control" name="facebook_id" placeholder="facebook id" />
 									</div>
 								</div>
 								<div class="form-row">
 									<div class="col-sm-6">
 										<label for="mobileno">Mobile no (09XXXXXXXXX)</label>
-										<input required type="tel" minlength="11" class="form-control" name="mobileno" placeholder="mobile number"d />
+										<input required type="tel" minlength="11" class="form-control" name="mobileno" placeholder="mobile number" />
 									</div>
-									<div class="col-sm-6">
-										<label for="shirt_size">Shirt Size</label>
-										<input required type="text" class="form-control" name="shirt_size" placeholder="shirt size" />
+								</div>
+								<div class="form-row">
+									<div class="col-sm-12">
+										<label for="notes">Special concerns (optional)</label>
+										<textarea class="form-control" name="notes" rows="3" placeholder="Allergies, requests, etc."></textarea>
 									</div>
 								</div>
 					      <div class="float-right">
@@ -170,6 +173,22 @@
 					      </div>
 							</form>
 							<form id="step3" class="frm -hide needs-validation">
+								<div class="form-row">
+									<div class="col-12">
+										<div class="form-check">
+										  <input required class="form-check-input" type="checkbox" name="policy" id="policyCheck">
+										  <label class="form-check-label" for="policyCheck">
+										    I agree to the Terms and Conditions
+										  </label>
+										</div>
+									</div>
+								</div>
+					      <div class="float-right">
+					      	<button class="btn btn-primary btn-control back3" type="button">back</button>
+									<button id="form-sub" type="submit" class="form-sub btn btn-primary btn-control">Submit</button>
+					      </div>
+							</form>
+							<form id="step4" class="frm -hide">
 								<div class="form-row">
 									<div class="col-12">
 										<div class="form-check">
@@ -306,13 +325,32 @@
 			}, 500);
     });
 
-    // $( "form" ).submit(function (e) {
-    //   e.preventDefault();
-    //   const form_data = $(this).serializeArray();
-    //   $.post('https://api.gcfyouthlive.com/campers', form_data, function(result) {
-    //     console.log(result);
-    //   });
-    // });
+    $( "form#step3" ).submit(function (e) {
+      e.preventDefault();
+			var form_data = $("#step1 input:input, #step2 input:input, #step2 textarea:input");
+			// console.log(form_data);
+			data = {};
+			for (each of form_data) {
+				data[each.name] = each.value;
+			}
+			data.camp = "HS";
+			data.birthdate = data.birthyear + '-' + data.birthmonth + '-' + data.birthday;
+      // $.post('https://api.gcfyouthlive.com/campers', data, function(result) {
+			$.ajax({
+			  url: 'http://localhost:3000/campers',
+			  type: "POST",
+			  data: JSON.stringify(data),
+			  contentType: "application/json; charset=utf-8",
+			  dataType: "json",
+			  success: function(){
+					$(".frm#step3").hide("fast");
+					$(".frm#step4").show("slow");
+					$root.animate({
+						scrollTop: $("#form-body").offset().top
+					}, 500);
+			  }
+			})
+    });
 
 	});
 </script>
