@@ -357,3 +357,15 @@ input[type="tel"],
 input[type="number"] {
     -moz-appearance: textfield;
 }
+
+input[type="tel"]:focus::-webkit-outer-spin-button,
+input[type="tel"]:focus::-webkit-inner-spin-button,
+input[type="number"]:focus::-webkit-inner-spin-button,
+input[type="number"]:focus::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="tel"]:focus,
+input[type="number"]:focus {
+    -moz-appearance: textfield;
+}
