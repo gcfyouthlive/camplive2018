@@ -176,10 +176,26 @@
 								<div class="form-row">
 									<div class="col-12">
 										<div class="form-check">
-										  <input required class="form-check-input" type="checkbox" name="policy" id="policyCheck">
+											<input required class="form-check-input" type="checkbox" name="policy" id="policyCheck">
 										  <label class="form-check-label" for="policyCheck">
-										    I agree to the Terms and Conditions
-										  </label>
+												I agree to the <a href="#terms" data-toggle="modal" data-target="#terms">Terms and Conditions</a>
+											</label>
+
+											<div class="modal fade" id="terms" tabindex="-1" role="dialog" aria-labelledby="terms" aria-hidden="true">
+											  <div class="modal-dialog" role="document">
+											    <div class="modal-content">
+											      <div class="modal-header">
+											        <h5 class="modal-title" id="exampleModalLabel">Terms and Conditions</h5>
+											        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											          <span aria-hidden="true">&times;</span>
+											        </button>
+											      </div>
+											      <div class="modal-body" style="font-size:0.8rem">
+																	Where you have provided us with your personal data by the  filling up of the summer camp form or through any of the GCF Youth LIVE webpages and affiliates, in providing or making available the personal data, whether directly or through another person, you hereby agree and consent to our collecting, using, disclosing, sharing and otherwise processing the personal data to help us perform the obligations we have with you, communicate with you, or meet any of the purposes GCF Youth LIVE sets out.
+											      </div>
+											    </div>
+											  </div>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -191,17 +207,11 @@
 							<form id="step4" class="frm -hide">
 								<div class="form-row">
 									<div class="col-12">
-										<div class="form-check">
-										  <input required class="form-check-input" type="checkbox" name="policy" id="policyCheck">
-										  <label class="form-check-label" for="policyCheck">
-										    I agree to the Terms and Conditions
-										  </label>
-										</div>
+										<p>Thank you for registering for camp! Kindly check your email for the waiver form.</p>
 									</div>
 								</div>
 					      <div class="float-right">
-					      	<button class="btn btn-primary btn-control back3" type="button">back</button>
-									<button id="form-sub" type="submit" class="form-sub btn btn-primary btn-control">Submit</button>
+					      	<button class="btn btn-primary btn-control" type="button" onClick="window.location.href=window.location.href">New Registration</button>
 					      </div>
 							</form>
 						</div>
@@ -304,7 +314,6 @@
     });
 		$(".open3").click(function() {
 			var form = $(".frm#step2")[0];
-			console.log(form.checkValidity());
 			if (form.checkValidity() === false) {
 				form.classList.add('was-validated');
 			}
@@ -314,7 +323,6 @@
 				$root.animate({
 					scrollTop: $("#form-body").offset().top
 				}, 500);
-				// 	return false;
 			}
 		});
 		$(".back3").click(function () {
@@ -328,16 +336,15 @@
     $( "form#step3" ).submit(function (e) {
       e.preventDefault();
 			var form_data = $("#step1 input:input, #step2 input:input, #step2 textarea:input");
-			// console.log(form_data);
 			data = {};
 			for (each of form_data) {
 				data[each.name] = each.value;
 			}
 			data.camp = "HS";
 			data.birthdate = data.birthyear + '-' + data.birthmonth + '-' + data.birthday;
-      // $.post('https://api.gcfyouthlive.com/campers', data, function(result) {
 			$.ajax({
-			  url: 'http://localhost:3000/campers',
+			  url: 'http://api.gcfyouthlive.com/campers',
+			  // url: 'http://localhost:3000/campers',
 			  type: "POST",
 			  data: JSON.stringify(data),
 			  contentType: "application/json; charset=utf-8",
@@ -348,10 +355,16 @@
 					$root.animate({
 						scrollTop: $("#form-body").offset().top
 					}, 500);
-			  }
+			  },
+				// error: function(){
+				// 	$(".frm#step3").hide("fast");
+				// 	$(".frm#step4").show("slow");
+				// 	$root.animate({
+				// 		scrollTop: $("#form-body").offset().top
+				// 	}, 500);
+			  // }
 			})
     });
-
 	});
 </script>
 
