@@ -349,12 +349,23 @@
 			  data: JSON.stringify(data),
 			  contentType: "application/json; charset=utf-8",
 			  dataType: "json",
-			  success: function(){
+			  success: function(response) {
 					$(".frm#step3").hide("fast");
 					$(".frm#step4").show("slow");
 					$root.animate({
 						scrollTop: $("#form-body").offset().top
 					}, 500);
+
+					var data_str = "";
+					for (each of JSON.parse(response)) {
+						data_str += "<b>" + each.name + ":</b> " + each.value + "<br>";
+					}
+					$.ajax({
+						url: "https://hooks.slack.com/services/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",
+						data: {"text": data_str},
+						contentType: "application/json; charset=utf-8",
+						dataType: "json"
+					});
 			  },
 				// error: function(){
 				// 	$(".frm#step3").hide("fast");
@@ -363,7 +374,7 @@
 				// 		scrollTop: $("#form-body").offset().top
 				// 	}, 500);
 			  // }
-			})
+			});
     });
 	});
 </script>
