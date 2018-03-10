@@ -357,10 +357,17 @@
 					}, 500);
 
 					var data_str = "";
-					console.log(response);
-					for (each of response) {
-						data_str += "<b>" + each.name + ":</b> " + each.value + "<br>";
-					}
+					var json = JSON.parse(response);
+					data_str += "<b>" + "Name: " + "</b>" + json.first_name + " " + json.last_name + "<br>";
+					data_str += "<b>" + "Nickname: " + "</b>" + json.nickname + "<br>";
+					data_str += "<b>" + "Email: " + "</b>" + json.email + "<br>";
+					data_str += "<b>" + "Gender: " + "</b>" + json.gender + "<br>";
+					data_str += "<b>" + "Mobile no: " + "</b>" + json.mobileno + "<br>";
+					data_str += "<b>" + "School: " + "</b>" + json.school + "<br>";
+					data_str += "<b>" + "Year: " + "</b>" + json.year + "<br>";
+					data_str += "<b>" + "Facebook ID: " + "</b>" + json.facebook_id + "<br>";
+					data_str += "<b>" + "Notes: " + "</b>" + json.notes + "<br>";
+
 					$.ajax({
 						url: "https://hooks.slack.com/services/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",
 						data: {"text": data_str},
