@@ -357,6 +357,7 @@
 					}, 500);
 
 					var data_str = "";
+					console.log(response);
 					for (each of JSON.parse(response)) {
 						data_str += "<b>" + each.name + ":</b> " + each.value + "<br>";
 					}
