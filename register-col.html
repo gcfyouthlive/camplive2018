@@ -348,8 +348,8 @@
 			data.camp = "College";
 			data.birthdate = data.birthyear + '-' + data.birthmonth + '-' + data.birthday;
 			$.ajax({
-			  // url: 'https://api.gcfyouthlive.com/campers',
-			  url: 'http://localhost:3000/campers',
+			  url: 'https://api.gcfyouthlive.com/campers',
+			  // url: 'http://localhost:3000/campers',
 			  type: "POST",
 			  data: JSON.stringify(data),
 			  contentType: "application/json; charset=utf-8",
